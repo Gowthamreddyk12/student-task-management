@@ -3,7 +3,7 @@
 ## Overview
 This project is a backend application developed using Python to manage student tasks.
 It provides REST APIs that allow users to create, view, update, and delete tasks.
-The system is designed by following serverless architecture principles and cloud-ready design.
+The system is designed following serverless architecture principles and cloud-ready design.
 
 ---
 
@@ -12,7 +12,7 @@ The application follows a serverless flow:
 
 Client → API Gateway → AWS Lambda (Python / FastAPI) → DynamoDB
 
-During local development, DynamoDB functionality is simulated using an in-memory Python data store.
+For local development and testing, DynamoDB functionality is simulated using an in-memory Python data store.
 
 ---
 
@@ -47,22 +47,23 @@ During local development, DynamoDB functionality is simulated using an in-memory
   "status": "Pending | In Progress | Completed",
   "created_at": "timestamp"
 }
+
 Design Choices
 Serverless Approach
-No need to manage servers
+No server management required
 
-Automatically handles scaling
+Automatic scaling with demand
 
-Cost effective for variable traffic
+Cost-effective for variable workloads
 
 Database Selection
-DynamoDB is preferred over relational databases because:
+DynamoDB is preferred because:
 
 It is fully managed and serverless
 
-Scales automatically with demand
+Scales automatically with traffic
 
-Ideal for simple key-based access patterns
+Works well for key-value access patterns
 
 Data Validation & Error Handling
 Each task is assigned a UUID
@@ -74,16 +75,16 @@ Proper HTTP status codes are returned
 Invalid task IDs and missing fields are handled safely
 
 Security Considerations
-AWS IAM roles control access between services
+AWS IAM roles manage service permissions
 
-Least-privilege access model is followed
+Least-privilege access is followed
 
 API Gateway can support authentication and throttling (conceptual)
 
 Scalability Notes
-AWS Lambda scales automatically with requests
+AWS Lambda scales automatically with incoming requests
 
-DynamoDB supports high throughput
+DynamoDB supports high read/write throughput
 
 Cold start impact can be reduced using provisioned concurrency
 
@@ -95,7 +96,7 @@ Data is cleared when the server restarts.
 This setup can be replaced with real DynamoDB without changing API logic.
 
 Key Learnings
-Designing REST APIs using FastAPI
+Building REST APIs using FastAPI
 
 Understanding serverless backend architecture
 
@@ -106,22 +107,3 @@ Debugging Python and environment issues
 Summary
 This project demonstrates practical backend development skills, REST API design,
 and cloud-native architecture understanding suitable for real-world applications.
-
-yaml
-Copy code
-
----
-
-## ✅ WHY THIS IS SAFE
-- Written from scratch
-- No copied phrases
-- Natural wording
-- Matches assignment requirements
-- Sounds like **your own understanding**
-
----
-
-### ✅ Final confirmation (reply one line only):
-**“I pasted the original README content”**
-
-After that, I’ll help you with **GitHub upload + submission message** (last step).
